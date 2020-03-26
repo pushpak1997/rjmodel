@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        html, body { height:100%; margin:0; padding:0 }
+        div { position:fixed; width:50%; height:50%; border-style: solid;}
+        #NW { top:0;   left:0;   background:rgb(160, 155, 155)  }
+        #NE { top:0;   left:50%; background:rgb(249, 249, 250)    }
+        #SW { top:50%; left:0;   background:rgb(54, 54, 54)   }
+        #SE { top:50%; left:50%; background:rgb(54, 54, 54)     }
+        p {margin:20px; color: rgb(209, 126, 17);}      
+    </style>
+</head>
+<body class="container">
+
+<main>
+<div class="row">
+    <div id="NW">
+        <form method="post" action="/upload">
+            <input type="text" name="img_url">
+            <input type="submit" value="upload">
+        </form>
+        
+        <img id="uploadPreview" style="width: 250px; height: 250px;" src="<%=myvar%>" />
+        
+ 
+<!-- <script type="text/javascript">
+
+    function PreviewImage() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("uploadPreview").src = oFREvent.target.result;
+        };
+    };
+
+</script> -->
+    </div>
+    <div id="NE">
+        <img id="uploadPreview" style="width: 250px; height: 250px;" src="<%=output%>" />
+    </div>
+    <div id="SW">
+        <p>     Output Details :</p>
+        <p> <%=text1%> </p>
+    </div>
+    <div id="SE">
+        <p>     Output Text :</p>
+        <p> <%=text2%> </p>
+    </div>
+
+</div>
+</main>
+
+</body>
+</html>
